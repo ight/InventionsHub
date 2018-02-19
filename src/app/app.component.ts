@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalDataService } from "./local-data.service"
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  todaysDate;
+  constructor(private localDataService: LocalDataService){ }
+  ngOnInit() {
+  	this.todaysDate = this.localDataService.todaysDate();
+  }
 }

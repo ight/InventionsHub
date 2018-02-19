@@ -1,0 +1,16 @@
+<div style="text-align:center">
+   <span ChnageText >Welcome to {{newcomponent | uppercase}}.</span>
+</div>
+
+<div>Month:
+  <select (change) = "changeMonths($event)" name = "month">
+  	<option *ngFor="let i of months"> {{i}}</option>
+  </select>
+</div>
+
+<div>
+   <span *ngIf="isavailable; then condition1 else condition2">Condition is valid.</span>
+   <ng-template #condition1>Condition is valid</ng-template>
+   <ng-template #condition2>Condition is invalid</ng-template>
+</div>
+<button (click)="myClickFunction($event)">Click Me</button>

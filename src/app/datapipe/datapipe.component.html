@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="datashow">
+	  <h2> Todays Date in data component: {{ todaysDate }} </h2>
+		<h2>
+		<b>{{ title | uppercase }}</b>
+		</h2>
+		<h3>Name:
+			<b>{{ name | lowercase }}</b>
+		</h3>
+		<h3>Date Of Birth:
+		  <b>{{ dateOfBirth | date:'d/M/y' }}</b>
+		</h3>
+		<h3>Address:
+		  <b>{{ address | json }}</b>
+		</h3>
+		<h3> Earning:
+			<b>{{ earning | currency:"USD":true}}</b>
+		</h3>
+		<h3>Custome Pipe:
+		  <b> Square root of 4 is: {{ 4 | sqrt }}</b>
+		</h3>
+	</div>
+</div>

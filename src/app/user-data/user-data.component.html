@@ -1,3 +1,18 @@
+<form #usersearch = "ngForm" (ngSubmit) = "onClickSubmit(usersearch.value)" >
+  <input type="text" name="userId" placeholder="userId" ngModel>
+  <input type = "submit" value = "submit">
+</form>
+
+<ul *ngFor = "let data of postdata">
+  <li> Title : {{data.title}} Body: {{data.body}}</li>
+</ul>
+
+
+
+
+
 <ul *ngFor = "let data of httpdata">
   <li> Name : {{data.name}} Address: {{data.address.city}}</li>
 </ul>
+
+

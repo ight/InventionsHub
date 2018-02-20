@@ -11,6 +11,7 @@ export class UserDataComponent implements OnInit {
 
   constructor(private http: Http) { }
   httpdata;
+  postdata;
 
   ngOnInit() {
   	this.http.get("http://jsonplaceholder.typicode.com/users").
@@ -19,4 +20,10 @@ export class UserDataComponent implements OnInit {
   }
   displaydata(data) { this.httpdata = data};
 
+  onClickSubmit(data){
+    this.http.get("http://jsonplaceholder.typicode.com/posts?userId="+data.userId).
+    map((response) => response.json()).
+    subscribe((data) => {this.searchdata(data);})
+  }
+  searchdata(data) { this.postdata = data};
 }
